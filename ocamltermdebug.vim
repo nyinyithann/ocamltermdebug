@@ -555,7 +555,7 @@ endfunc
 " Handle setting a breakpoint
 " Will update the sign that shows the breakpoint
 func s:HandleNewBreakpoint(msg)
-  let r_line        = '\(\w\+\)\s\(\d\+\)\s\(\w\+\)\s\(\d\+\):\s\(\w\+\)\s\(.\+\),\s\(\w\+\)\s\(\d\+\),\s\(\w\+\)'
+  let r_line        = '\(\w\+\)\s\(\d\+\)\s\(\w\+\)\s\(.\+\):\s\(\w\+\)\s\(.\+\),\s\(\w\+\)\s\(\d\+\),\s\(\w\+\)'
   let m = matchlist(a:msg, r_line)
   call ch_log("DEBUGGGGGGGGGGGG          inside " . len(m))
   if len(m) == 10
