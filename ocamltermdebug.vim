@@ -62,7 +62,7 @@ func s:StartDebug_term(dict)
   " Add -quiet to avoid the intro message causing a hit-enter prompt.
   let gdb_args = get(a:dict, 'gdb_args', [])
   if empty(gdb_args)
-      let gdb_args = [expand('%:r') . '.bc']
+      let gdb_args = [expand('%:r')]
   endif
   let proc_args = get(a:dict, 'proc_args', [])
 
