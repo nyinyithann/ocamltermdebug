@@ -16,9 +16,16 @@ I don't care if Haskell is a cleaner language than OCaml... "Math is the only tr
 
 This works only on my laptop (a 10 years old Linux-based laptop). **Don't use it.**
 
-``git clone inside ~/.vim/plugin/``
+``mkdir -p ~/.vim/plugin/ocamltermdebug``
 
-I always use dune buildsystem with a symlink main.bc -> _build/default/src/main.bc
-so I can use this plugin with :
+``cd ~/.vim/plugin/ocamltermdebug``
 
-``gvim -c ':Ocamltermdebug' src/main.ml``
+``git clone https://github.com/Rehan-MALAK/ocamltermdebug.git`` or own fork of the repo
+
+I can use this plugin with :
+
+``gvim main.ml``
+
+and then :
+
+``:Ocamltermdebug``
