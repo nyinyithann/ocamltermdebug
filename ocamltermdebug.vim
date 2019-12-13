@@ -297,34 +297,34 @@ func s:InstallCommands()
   let save_cpo = &cpo
   set cpo&vim
 
-  command Break call s:SetBreakpoint() " wrap around SendCommand('br @ blabla.ml 3')
+  command! Break call s:SetBreakpoint() " wrap around SendCommand('br @ blabla.ml 3')
   nnoremap <C-b> :Break<CR>
-  command Clear call s:ClearBreakpoint()
+  command! Clear call s:ClearBreakpoint()
   nnoremap <C-c> :Clear<CR>
-  command Step call s:SendCommand('step')
+  command! Step call s:SendCommand('step')
   nnoremap <C-s> :Step<CR>
-  command Over call s:SendCommand('next')
+  command! Over call s:SendCommand('next')
   nnoremap <C-n> :Over<CR>
-  command Finish call s:SendCommand('finish')
+  command! Finish call s:SendCommand('finish')
   nnoremap <C-f> :Finish<CR>
-  command Run call s:SendCommand('run')
+  command! Run call s:SendCommand('run')
   nnoremap <C-e> :Run<CR>
-  command Last call s:SendCommand('last')
+  command! Last call s:SendCommand('last')
   nnoremap <C-l> :Last<CR>
-  command Arguments call s:SendArguments()
+  command! Arguments call s:SendArguments()
   nnoremap <C-a> :Arguments<CR>
-  command Goto call s:GotoPrgrm()
+  command! Goto call s:GotoPrgrm()
   nnoremap <C-g> :Goto<CR>
-  command Back call s:SendCommand('backstep')
+  command! Back call s:SendCommand('backstep')
   nnoremap <C-k> :Back<CR>
 "   command Stop call s:SendCommand('-exec-interrupt') " TODO no ocamldebug
 
 "   command Continue call term_sendkeys(s:gdbbuf, "continue\r")
 
-  command -range -nargs=* Evaluate call s:Evaluate(<range>, <q-args>)
-  command Gdb call win_gotoid(s:gdbwin)
-  command Program call win_gotoid(s:ptywin)
-  command Source call s:GotoSourcewinOrCreateIt()
+  command! -range -nargs=* Evaluate call s:Evaluate(<range>, <q-args>)
+  command! Gdb call win_gotoid(s:gdbwin)
+  command! Program call win_gotoid(s:ptywin)
+  command! Source call s:GotoSourcewinOrCreateIt()
 
   " TODO: can the K mapping be restored?
   nnoremap K :Evaluate<CR>
